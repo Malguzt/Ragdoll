@@ -11,7 +11,7 @@ Game::Game()
     setZoom();
 	initPhysics();
 
-	ragdoll = new Ragdoll(phyWorld, pWnd, 20, 10);
+	ragdoll = new Ragdoll(phyWorld, pWnd, 30, 10);
 }
 
 Game::~Game()
@@ -85,17 +85,17 @@ void Game::initPhysics(){
 
 	//Create floor and walls
 
-	b2Body* groundBody = Game::CreateRectangularStaticBody(phyWorld,100,10);
+	b2Body* groundBody = Game::CreateRectangularStaticBody(phyWorld,100,2);
 	groundBody->SetTransform(b2Vec2(50.0f,100.0f),0.0f);
 
-	b2Body* leftWallBody = Game::CreateRectangularStaticBody(phyWorld,10,100);
+	b2Body* leftWallBody = Game::CreateRectangularStaticBody(phyWorld,2,100);
 	leftWallBody->SetTransform(b2Vec2(0.0f,50.0f),0.0f);
 
-	b2Body* rightWallBody = Game::CreateRectangularStaticBody(phyWorld,10,100);
+	b2Body* rightWallBody = Game::CreateRectangularStaticBody(phyWorld,2,100);
 	rightWallBody->SetTransform(b2Vec2(100.0f,50.0f),0.0f);
 
 	//Create the ceiling
-	b2Body* topWallBody = Game::CreateRectangularStaticBody(phyWorld,100,10);
+	b2Body* topWallBody = Game::CreateRectangularStaticBody(phyWorld,100,2);
 	topWallBody->SetTransform(b2Vec2(50.0f,0.0f),0.0f);
 }
 
